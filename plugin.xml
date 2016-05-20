@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            id="autofindviews.contribution1"
+            nameFilter="*.xml"
+            >
+         <action
+               label="ZAutoFindViews"
+               class="autofindviews.popup.actions.FindAction"
+               enablesFor="1"
+               id="autofindviews.newAction">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
