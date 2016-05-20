@@ -83,7 +83,7 @@ public class AutoFindView {
 				viewCodes+="\tviewHolder=new ViewHolder();\n\tconvertView=LayoutInflater.from(context).inflate(R.layout.item_xxx, null);\n";
 				viewCodes+=viewFieldBuilder.toString();
 				viewCodes+="\tconvertView.setTag(viewHolder);\n}else{\n";
-				viewCodes+="\tviewHolder = (ViewHolder) convertView.getTag();\nreturn convertView;\n}";
+				viewCodes+="\tviewHolder = (ViewHolder) convertView.getTag();\n}\nreturn convertView;";
 				viewCodes+="\n\nprivate static class ViewHolder\n{"+viewInitBuilder.toString()+"}";
 				break;
 			}
@@ -137,8 +137,6 @@ public class AutoFindView {
                 throws SAXException {
             super.endElement(uri, localName, qName);
         }
-
-        
         private String findItemViewId(Attributes attrs)
         {
         	 if (attrs == null) 
